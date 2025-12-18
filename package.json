@@ -1,0 +1,28 @@
+{
+  "name": "ensa",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.1.7"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.15",
+    "artisan": "^0.1.2",
+    "express": "^5.1.0",
+    "mysql": "^2.18.1",
+    "node": "^25.2.0",
+    "php": "^1.1.0",
+    "serve": "^14.2.5",
+    "tailwindcss": "^4.1.15"
+  },
+  "main": "index.js",
+  "author": "Isaac",
+  "license": "MIT",
+  "description": ""
+}

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Leveling </title>
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body class="bg-gray-00">
+
+    <!-- main app container -->
+    <div id="app" class="appContainer grid min-h-screen
+          grid-cols-3 grid-rows-[auto, auto, auto, 1fr, 2fr, auto, 1fr] gap-2 
+          bg-gray-400 border-4 border-black rounded-2xl"
+       >
+      <!--01-app header-->
+      <header class="header col-span-3 flex text-center
+          border-2 border-black bg-gray-400 rounded-2xl"
+          id="HeaderPage"
+        >
+        <h1 class="text-center p-2 m-2">PERSONAL SOLO LEVELNG</h1>
+        
+        <div class="UserDetails" id="UserDetails">
+          <p> Profile PIC</p>
+          <ul class="hidden" id="UserProfile">
+            <li class=""><a href="UserPic">Profile</a></li>
+            <li class=""><a href="UserSettings">UserSettings</a></li>
+            <li><a href="UserStatus">Login</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <!--02-Menu & Home buttons-->
+      <div class="col-span-3 flex justify-between items-center  bg-amber-500 rounded-2xl 
+        border-2 border-black sticky top-0 z-50 shadow" 
+        id = "menu">
+
+        <!--Home button-->
+        <p class="text-center p-4 m-4 text-2xl" id="HomeBtn">Home
+          <img>
+        </p>
+        
+        <!--Menu button with or for Icon-->
+        <button class="m-2 " id="menuBtn">
+          <p class="" id="MenuText">Menu</p>
+          <p class="bg-black w-10 h-2 m-2"></p>
+          <p class="bg-black w-10 h-2 m-2"></p>
+          <p class="bg-black w-10 h-2 m-2"></p>
+        </button>
+      </div>
+
+      <!--03-Navigation bar-->
+      <nav class="col-span-3 bg-blue-500 hidden m-2 p-2 flex justify-center  " id="NavBar">
+        <ul class=" " id="UserNav">
+          <li class="" id="ListItem">Goals</li>
+          <li>Daily Quest</li>
+          <li>Plan</li>
+          <li>Rewards</li>
+        </ul>
+      </nav>
+
+      <!--04-Navigation stats buttons-->
+      <div class="col-span-3 ">
+
+        <div class="m-2 p-2" id="flex items-center justify-between"> 
+
+          <div class="" 
+            id="AddBtn">
+            <p class="text-center bg-red-500 text-2xl m-2 p-2 " id="">+add</p>
+
+            <!--ADD MODAL-->
+            <section class="ModalBox hidden rounded-2xl m-4 p-4"
+              id="ModalBox">
+
+              <div class="overlay " id="overlaySection">
+
+                <!--Add Button when clicked displays this form-->
+                <form class="flex rounded-2xl bg-gray-400 justify-center flex-col" 
+                  id="FormContainer">
+                  <h3 class="text-center text-2xl ">FILL IN YOUR GOALS</h3> 
+                    <label for="MainGoal" id="MainGoal">YOUR MAIN GOAL IN 1 WORD</label>
+                    <input type="text" name="Goal" class="bg-black text-white rounded-2xl m-2 p-2 text-center" 
+                      id="InputGoal" placeholder="MAIN GOAL" class="text-center" required>
+                    <input type="text" name="Time" class="bg-blue-900 text-white rounded-2xl m-2 p-2  text-center" id="InputTime" placeholder="TIME FOR GOALS" class="text-center">
+                    <input type="text"  name="REMINDER" class="bg-green-600 text-white rounded-2xl m-2 P text-2xl text-center" id="Reminder" placeholder="REMINDER" class="text-center">
+                  <button type="button" class="bg-blue-700 rounded-2xl m-2 p-2 text-2xl" id="SubmitBtn">Save</button>
+                  <button type="reset" class="bg-blue-700 rounded-2xl text-2xl m-2 p-2 text-2xl" id="CancelBtn">Cancel</button>
+                </form>
+              </div>
+            </section>
+          </div>
+
+          <div class="bg-blue-300 m-2 p-2 text-2xl rounded-2xl border-4 border-black" 
+            id="UserLevel">
+            <p class="text-center border-4 border-black rounded-2xl">Level:2-10</p>
+          </div>
+
+          <div class="border-4 rounded-2xl text-center bg-green-400 m-2 p-2 text-2xl" 
+            id="HealthBtn">
+            <p class="" id=""> Health: 5 - 10 </p>
+          </div>
+
+          <!-- userProfile -->
+          <div class="bg-amber-500 m-2 p-2 border-2 border-black rounded-2xl" id="statusBar">
+            <p class="text-center text-2xl" 
+              id="UserExp">X-P: 10-100
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!--05-main content-->
+      <main class="col-span-3 bg-blue-500" 
+          id="MainPage" >
+        <h2 class="text-center text-bold underline" id="MainHeader"></h2>
+        <!--Daily Task-->
+        <div class="flex flex-col  m-2 p-2 " id="DailyQuest">
+
+          <p class=" underline text-center text-black text-2xl" 
+            id="MainTitle">Daily Quest
+          </p>
+
+          <div class="GoalsList text-bold m-2 p-2" 
+            id="GoalList">
+            <ul class="bg-green-500 m-2 p-2 " id="" >
+              <li class="text-center m-2 p-2" id="Arrayoutput">GOALS LIST</li> <br>
+              <li class="GoalList underline text-center text-2xl m-2 p-2 bg-red-500" id="GoalsList"></li>
+            </ul>
+          </div>
+          <!--Infor DISPLAY-->
+          <div class="flex flex-col place-items-center" id="DailyChecks">
+            <h1 class="underline text-center text-2xl m-4 p-4 bg-green-400" id="title">QUEST INFO</h1>
+            <p class="Mission text-center m-2 p-2 bg-green-600" id="MissionDisplay"></p>
+            <!-- <p>Your have to study for 30 mins to increase your clarity and understanding</p>
+            <p class="m-4 p-4">STUDY FOR 30 MINS</p>
+            <p class="text-2xl m-2 p2" id="">BOOK: </p>
+            <p class="text-2xl m-2 p2" id=""> PAGE:</p> -->
+            <input type="checkbox" class="w-14 h-14" id="DoneCheckbox">
+            <!-- Points display
+            <div class="" id="points">  
+              <p class="bg-green-600 text-2xl m-2 p-2 rounded-2xl w-40 flex" id="PointsBar">POINTS: 3</p>
+            </div> -->
+          </div>
+    
+          <!--Daily checks-->
+          <div class="flex flex-col hidden rounded-4xl m-4 p-2" id="level_up">
+
+            <div class="flex hidden flex-col place-items-center m-4 p-2" id="InfoDisplay">
+              <h1 class="text-white text-center underline text-4xl mb-8">LEVELED UP</h1>
+              <p class="">YOU HAVE COMPLETED YOUR DAILY QUEST</p>
+              <p>Your next mission and plan will be at 2: 30 pm</p>
+              <p class="m-2 P underline bg-yellow-500 text-1xl">AWARDs:</p>
+              <p class="">4 Episodes of SOLO LEVELING</p>
+              <p>3 FIFA GAMES 100 - KSH</p>
+              <P></P>
+            </div>
+
+          </div>
+          
+          <!--BUTTONS-->
+          <div class="flex place-items-center justify-center " id="">
+            <button class="bg-blue-400 text-2xl m-4 p-4 text-cente rounded-2xl"
+              id="DoneBtn">START</button>
+          </div>
+
+          <!--progressBar-->
+          <div class="bg-black hidden rounded-2xl m-4 p-4" id="ProgressBar">
+            <p class="text-cente text-green-500" id="ProgressText">progress</p>
+            <progress class="" value="60" max="100" id="progressFill"></progress>
+          </div>
+        </div>
+      </main>
+      
+      <!--06-sidebar-->
+      <aside class="aside col-span-3 " id="AsidePanel">
+        <h5 class="text-center bg-green-500 m-2 p-2 rounded-2xl border-2 border-black"
+          id="AsideTitle">Rewards</h5>
+
+          <ol class="list-decimal m-2 p-2 hidden" id="AsideList">
+            <li class="" id="RewardList">play one game</li>
+            <li>Go for a Walk</li>
+            <li>Watch One Episode</li>
+            <li>Read fave Novel</li>
+            <li>Sleep for 8 hrs</li>
+          </ol>
+      </aside>
+
+      <!--07-footer-->
+      <footer class="footerPage col-span-3 flex flex-col justify-center items-center bg-blue-700 rounded-2xl
+        " id="FooterPage">
+        <h6>FOOTER</h6>
+        <h1>Made by Isaac Juma </h1>
+        <div class="mydiv" id="mydiv">
+          
+        </div>
+      </footer>
+
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
